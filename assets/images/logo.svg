@@ -1,0 +1,75 @@
+<svg width="100%" viewBox="0 0 680 220" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Bernhard Frank Cloud Engineering Logo – Solid Variant</title>
+  <desc>Logo mit drei Hexagon-Waben, solid gefüllt mit Randfarbe</desc>
+
+  <defs>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0095ff"/>
+      <stop offset="100%" stop-color="#00e5a0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ═══ WABE 1 — Hyper-V ═══ -->
+  <polygon points="116,57 95,93 53,93 32,57 53,20 95,20"
+    fill="#0095ff" stroke="#42b8ff" stroke-width="1.5"/>
+  <g clip-path="url(#c1)" font-family="'Chakra Petch', monospace" font-size="7.8" font-weight="400" letter-spacing="1.5">
+    <text x="30" y="30"  fill="white" opacity="0.55">0100100001111001</text>
+    <text x="30" y="40"  fill="white" opacity="0.30">0111000001100101</text>
+    <text x="30" y="50"  fill="white" opacity="0.55">0111001000101101</text>
+    <text x="30" y="60"  fill="white" opacity="0.30">0101011001001000</text>
+    <text x="30" y="70"  fill="white" opacity="0.55">0111100101110000</text>
+    <text x="30" y="80"  fill="white" opacity="0.30">0110010101110010</text>
+    <text x="30" y="90"  fill="white" opacity="0.55">0010110101010110</text>
+  </g>
+  <clipPath id="c1">
+    <polygon points="114,57 95,93 55,93 32,57 55,20 95,20"/>
+  </clipPath>
+
+  <!-- ═══ WABE 2 — Azure Local ═══ -->
+  <polygon points="116,131 95,168 53,168 32,131 53,95 95,95"
+    fill="#0095ff" stroke="#42b8ff" stroke-width="1.5"/>
+  <g clip-path="url(#c2)" font-family="'Chakra Petch', monospace" font-size="7.8" font-weight="400" letter-spacing="1.5">
+    <text x="30" y="106" fill="white" opacity="0.30">0100000101111010</text>
+    <text x="30" y="116" fill="white" opacity="0.55">0111010101110010</text>
+    <text x="30" y="126" fill="white" opacity="0.30">0110010100100000</text>
+    <text x="30" y="136" fill="white" opacity="0.55">0100110001101111</text>
+    <text x="30" y="146" fill="white" opacity="0.30">0110001101100001</text>
+    <text x="30" y="156" fill="white" opacity="0.55">0110110001000001</text>
+    <text x="30" y="166" fill="white" opacity="0.30">0111101001110101</text>
+  </g>
+  <clipPath id="c2">
+    <polygon points="114,131 95,168 55,168 32,131 55,95 95,95"/>
+  </clipPath>
+
+  <!-- ═══ WABE 3 — AVD ═══ -->
+  <polygon points="181,94 160,130 118,130 97,94 118,57 160,57"
+    fill="#00e5a0" stroke="#00e5a0" stroke-width="1.5"/>
+  <g clip-path="url(#c3)" font-family="'Chakra Petch', monospace" font-size="7.8" font-weight="400" letter-spacing="1.5">
+    <text x="95" y="68"  fill="white" opacity="0.55">0100000101010110</text>
+    <text x="95" y="78"  fill="white" opacity="0.30">0100010001000001</text>
+    <text x="95" y="88"  fill="white" opacity="0.55">0101011001000100</text>
+    <text x="95" y="98"  fill="white" opacity="0.30">0100000101010110</text>
+    <text x="95" y="108" fill="white" opacity="0.55">0100010001000001</text>
+    <text x="95" y="118" fill="white" opacity="0.30">0101011001000100</text>
+    <text x="95" y="128" fill="white" opacity="0.55">0100000101010110</text>
+  </g>
+  <clipPath id="c3">
+    <polygon points="179,94 160,130 120,130 97,94 120,57 160,57"/>
+  </clipPath>
+
+  <!-- ═══ WORDMARK ═══ -->
+  <text x="210" y="100"
+    font-family="'Chakra Petch', monospace" font-weight="700" font-size="52"
+    fill="url(#text-grad)" letter-spacing="-1">Bernhard</text>
+
+  <text x="210" y="155"
+    font-family="'Chakra Petch', monospace" font-weight="700" font-size="52"
+    fill="#0d1b2a" letter-spacing="-1">Frank</text>
+
+  <line x1="210" y1="168" x2="500" y2="168" stroke="#0095ff" stroke-width="1" opacity="0.4"/>
+
+  <text x="212" y="193"
+    font-family="'Chakra Petch', monospace" font-weight="300" font-size="26"
+    fill="#90b8d8" letter-spacing="5">Cloud Engineering</text>
+
+</svg>
