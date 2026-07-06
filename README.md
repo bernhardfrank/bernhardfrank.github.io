@@ -1,1 +1,0 @@
-# bernhardfrank.github.io
