@@ -18,23 +18,37 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Bernhard Frank's Blog
-email: your-email@example.com
+title: Bernhard Frank Cloud Engineering
+author: Bernhard Frank
+email: info@bernhardfrank.cloud
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Technischer Blog zu Azure Local, Hyper-V, Azure Virtual Desktop und
+  Microsoft-Infrastrukturen von Bernhard Frank Cloud Engineering.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
+lang: de
+twitter_username:
 github_username:  bernhardfrank # the username of the account you want to show in the header
 
+# Blog post URLs live under /blog/YYYY/MM/DD/title/
+permalink: /blog/:year/:month/:day/:title/
+
 # Build settings
-#theme: minima
-remote_theme: pages-themes/hacker@v0.2.0
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme # add this line to the plugins list if you already have one
+#  - jekyll-remote-theme # add this line to the plugins list if you already have one
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
 
 # Exclude from processing.
 # The following items will not be processed, by default.
