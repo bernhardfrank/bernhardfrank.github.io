@@ -15,7 +15,7 @@ So to get it out of my head again...and as some kind of practical guy I created 
 ![the livemigration test setup](/assets/images/posts/2026/hyperv-failover-cluster.svg)
 - Thus all nested Hyper-V VMs (HV20xx-y) share the same underlying physical HW - so no incompatibilities e.g. CPU from that side. 
 - I created 2 Hyper-V server VMs of each OS version (e.g. HV2016-1, HV2016-2,...,HV2025-1, HV2025-2) in total 8 servers with 4 on each physical node:
-![nested Hyper-V VMs](/assets/images/posts/2026/posts/2026/R730-225.png)
+![nested Hyper-V VMs](/assets/images/posts/2026/R730-225.png)
 - All Hypervisors 'HV20xx-y' are domain joined. 4 vNics(MGMT, Compute1 Compute2, SMB1, SMB2), standalone (not clustered), LM enabled using Kerberos delegatgion + SMB:
 ![Hyper-V LM Settings](/assets/images/posts/2026/HV2016LMSettings.png)
 - LM traffic flow enabled on MGMT, SMB1 and SMB2 networks. 
