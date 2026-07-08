@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -25,7 +25,7 @@
     <main>
       <article class="post-wrap">
 
-        <a href="{{ '/blog/' | relative_url }}" class="back-link" aria-label="Zurück zur Blog-Übersicht">
+        <a href="{{ '/blog/' | relative_url }}" class="back-link" aria-label="Back to blog overview">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="15 18 9 12 15 6"/>
@@ -48,9 +48,9 @@
           <div class="post-meta">
             <span>{{ page.author | default: site.author }}</span>
             <span class="post-meta-dot" aria-hidden="true"></span>
-            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%d." }} {{ site.data.months_de[post_month] }} {{ page.date | date: "%Y" }}</time>
+            <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ site.data.months_en[post_month] }} {{ page.date | date: "%-d" }}, {{ page.date | date: "%Y" }}</time>
             <span class="post-meta-dot" aria-hidden="true"></span>
-            <span>~{{ read_min }} Min. Lesezeit</span>
+            <span>~{{ read_min }} min read</span>
           </div>
           <div class="post-divider" aria-hidden="true"></div>
         </header>
@@ -65,7 +65,7 @@
               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="15 18 9 12 15 6"/>
             </svg>
-            Alle Artikel
+            All articles
           </a>
         </div>
 

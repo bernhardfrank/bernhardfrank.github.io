@@ -22,11 +22,11 @@ title: Bernhard Frank Cloud Engineering
 author: Bernhard Frank
 email: info@bernhardfrank.cloud
 description: >- # this means to ignore newlines until "baseurl:"
-  Technischer Blog zu Azure Local, Hyper-V, Azure Virtual Desktop und
-  Microsoft-Infrastrukturen von Bernhard Frank Cloud Engineering.
+  Technical Blog around Azure Local, Hyper-V, Azure Virtual Desktop and
+  Microsoft infrastructures from Bernhard Frank Cloud Engineering.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-lang: de
+lang: en
 twitter_username:
 github_username:  bernhardfrank # the username of the account you want to show in the header
 
