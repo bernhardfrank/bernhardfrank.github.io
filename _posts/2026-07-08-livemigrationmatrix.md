@@ -12,22 +12,22 @@ My thinking was that: Although the settings in the tools e.g. Hyper-V Manager ha
   
 So to get it out of my head again...and as some kind of practical guy I created the following test setup:  
 - On 2x Dell R730 - I installed Windows Server 2025 with Failover cluster and Hyper-V (S2D) - I then created a bunch of nested (i.e. virtualized) Hyper-V VMs inside running Windows Server 2016 ... Windows Server 2025 with Hyper-V enabled.
-![the livemigration test setup](/assets/images/hyperv-failover-cluster.svg)
+![the livemigration test setup](/assets/images/posts/2026/hyperv-failover-cluster.svg)
 - Thus all nested Hyper-V VMs (HV20xx-y) share the same underlying physical HW - so no incompatibilities e.g. CPU from that side. 
 - I created 2 Hyper-V server VMs of each OS version (e.g. HV2016-1, HV2016-2,...,HV2025-1, HV2025-2) in total 8 servers with 4 on each physical node:
-![nested Hyper-V VMs](/assets/images/R730-225.png)
+![nested Hyper-V VMs](/assets/images/posts/2026/posts/2026/R730-225.png)
 - All Hypervisors 'HV20xx-y' are domain joined. 4 vNics(MGMT, Compute1 Compute2, SMB1, SMB2), standalone (not clustered), LM enabled using Kerberos delegatgion + SMB:
-![Hyper-V LM Settings](/assets/images/HV2016LMSettings.png)
+![Hyper-V LM Settings](/assets/images/posts/2026/HV2016LMSettings.png)
 - LM traffic flow enabled on MGMT, SMB1 and SMB2 networks. 
 - As workload VM to be moved around: I have created a small alpine Linux VM as Gen2 VM created on every Hyper-V OS Version - i.e. 4 VMs: alpineCV8, alpineCV9, alpineCV10 and alpineCV12. Connected to my MGMT network thus I could ping it anywhere in my domain.
 
 Then things got funny - doing live migrations like mad...  
- ![live migrating ](/assets/images/lmigrating.png)  
+ ![live migrating ](/assets/images/posts/2026/lmigrating.png)  
  ('shared nothing live migration' - i.e. copy virtual harddisk of the vms to destination)  
    
 ...well, not really...  
 **...Live Migrations just work fine between different Hyper-V versions - if the destination Hyper-V system understands the to-be-migrated-VM's 'Configuration Version'.**  
-![ Hyper-V 2025 runs different configuration versions ](/assets/images/confversion.png)  
+![ Hyper-V 2025 runs different configuration versions ](/assets/images/posts/2026/confversion.png)  
 Somehow very logical and I could have thought about it upfront - saving me time - it was somewhere in my brain.  
 However as you might stumble upon it as well...  
 
