@@ -10,13 +10,13 @@
   toggle.addEventListener('click', () => {
     const open = mobileNav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
-    toggle.setAttribute('aria-label', open ? 'Navigation schließen' : 'Navigation öffnen');
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   });
   document.querySelectorAll('.m-item, .m-cta').forEach(el => {
     el.addEventListener('click', () => {
       mobileNav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
-      toggle.setAttribute('aria-label', 'Navigation öffnen');
+      toggle.setAttribute('aria-label', 'Open navigation');
     });
   });
 

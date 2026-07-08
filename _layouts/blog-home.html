@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -24,8 +24,8 @@
     <!-- ── BLOG HERO ── -->
     <header class="blog-hero">
       <div class="container">
-        <div class="section-label" aria-hidden="true">Technischer Blog</div>
-        <h1>{{ page.title | default: "Praxiswissen aus der Cloud" }}</h1>
+        <div class="section-label" aria-hidden="true">Technical Blog</div>
+        <h1>{{ page.title | default: "Hands-on knowledge from the cloud" }}</h1>
         <p style="margin-top:14px; font-size:1rem; color:var(--text-muted); max-width:560px; line-height:1.74; font-weight:400;">
           {{ page.description | default: site.description }}
         </p>
@@ -33,8 +33,8 @@
         {% for post in site.posts %}{% assign all_tags = all_tags | concat: post.tags %}{% endfor %}
         {% assign uniq_tags = all_tags | uniq | sort %}
         {% if uniq_tags.size > 0 %}
-        <div class="filter-row" role="list" aria-label="Nach Thema filtern">
-          <button class="filter-btn active" data-tag="">Alle</button>
+        <div class="filter-row" role="list" aria-label="Filter by topic">
+          <button class="filter-btn active" data-tag="">All</button>
           {% for tag in uniq_tags %}
           <button class="filter-btn" data-tag="{{ tag }}">{{ tag }}</button>
           {% endfor %}
@@ -55,11 +55,11 @@
           <a href="{{ post.url | relative_url }}"
             class="post-card {% if forloop.first %}post-card-featured{% endif %} fade-up d{{ forloop.index | at_most: 4 }}"
             data-tags="{{ tags | join: '|' }}"
-            aria-label="Artikel lesen: {{ post.title | escape }}">
+            aria-label="Read article: {{ post.title | escape }}">
             <div class="post-meta">
-              <span class="post-date">{{ post.date | date: "%d." }} {{ site.data.months_de[post_month] }} {{ post.date | date: "%Y" }}</span>
+              <span class="post-date">{{ site.data.months_en[post_month] }} {{ post.date | date: "%-d" }}, {{ post.date | date: "%Y" }}</span>
               <span class="post-meta-dot" aria-hidden="true"></span>
-              <span class="post-readtime">~{{ read_min }} Min. Lesezeit</span>
+              <span class="post-readtime">~{{ read_min }} min read</span>
               {% if tags.size > 0 %}<span class="post-meta-dot" aria-hidden="true"></span>{% endif %}
               {% for tag in tags %}
               <span class="post-tag {% if forloop.first %}t-accent{% endif %}">{{ tag }}</span>
@@ -68,7 +68,7 @@
             <h2>{{ post.title }}</h2>
             <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 200 }}</p>
             <span class="post-read-more" aria-hidden="true">
-              Weiterlesen
+              Read more
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"/>
