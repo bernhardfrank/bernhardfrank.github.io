@@ -119,3 +119,5 @@ Invoke-Command -ComputerName HCIMX1, HCIMX2 -ScriptBlock {
 However fixing it at the source (the switch) is the cleaner way - it also prevents the issue on redeployments or when adding nodes.
 
 ### **Takeaway:** If cluster creation complains about a *ClusterAndClient* role on your storage network - don't only look for IPv4 gateways. Check `IPv6DefaultGateway` too ;-)
+
+>Credits: This post was supported by claude
