@@ -4,6 +4,12 @@ date:   2026-10-08
 tags: [Azure Local, Networking]
 ---
 
+## Summary
+
+I changed my setup to a single dual port NIC due to a HW change. Thus I ran the setup with all traffic classes (mgmt, compute and storage) on these 2 ports only and ran into an error.  
+It turned out that the storage vNics picked up an IPv6 Default Gateway which broke the installation.  
+Keep on reading if you are interested in the full story:  
+
 ## Scenario
 
 Fresh Azure Local deployment with **build 2609** in my lab:
@@ -13,7 +19,7 @@ Fresh Azure Local deployment with **build 2609** in my lab:
 - Management untagged (native VLAN 777 on the switch), storage on the default VLANs **711 / 712**
 - The switch (Lenovo G8272, CNOS) is also the default gateway for management (`interface Vlan777` - 172.31.254.254)
 
-Nothing fancy - a pretty standard setup.
+Nothing fancy - a pretty standard setup IMHO.
 
 ## Problem
 
@@ -96,7 +102,7 @@ Then simply hit **'Resume deployment'** in the portal:
 
 ### If you can't touch the switch  
 
->**Warning:This section is experimental an was suggested by claude. I haven't tried it but found it useful in this context. So no warranties!**
+>**Warning: This section is experimental an was suggested by claude. I haven't tried it but found it useful in this context. So no warranties!**
 
 Alternatively you can stop the storage vNICs from listening to RAs on the nodes and remove the learned routes (run on any node):
 
