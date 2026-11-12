@@ -16,9 +16,41 @@ No build step, no dependencies. Selection is saved in the visitor's browser (loc
 | File | Purpose |
 |---|---|
 | `index.html` | The page (HTML, CSS, JS) |
-| `data.js` | Session data and star ratings. Edit this file to add or re-rate sessions. |
+| `data.js` | All Ignite sessions plus the curated "Hybrid & Infra" ratings |
+| `update-data.js` | Refreshes `data.js` from the official catalog (Node 18+) |
 
-Times in `data.js` are UTC (ISO 8601). `start: null` marks an on-demand session.
+List filters: **Hybrid & Infra** (all rated picks, default), **★★★**, **★★**, **★**, **All Ignite** (every session), plus a session-type filter.
+
+### Re-rating sessions
+
+Edit the `curated` block at the top of `data.js`: `stars` (1–3) and an optional short `abstract`.
+Do not edit the `sessions` array by hand.
+
+### Refreshing the catalog (times and rooms change before the event)
+
+```bash
+node update-data.js
+```
+
+This downloads the current catalog, rebuilds `sessions` and keeps your `curated` block.
+Times are UTC (ISO 8601). `start: null` marks an on-demand session. Sessions that run more than
+once get one entry per time slot (`LAB724-1`, `LAB724-2`, …).
+
+## Publish on GitHub Pages
+
+1. Create a repository, e.g. `ignite-2026-planner`, and push `index.html`, `data.js` and `README.md` to the `main` branch.
+2. In the repository, open **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**, pick `main` and `/ (root)`, then **Save**.
+4. After a minute the page is live at `https://<your-user>.github.io/ignite-2026-planner/`.
+
+```bash
+git init
+git add index.html data.js README.md
+git commit -m "Ignite 2026 planner"
+git branch -M main
+git remote add origin https://github.com/<your-user>/ignite-2026-planner.git
+git push -u origin main
+```
 
 ## Notes
 
